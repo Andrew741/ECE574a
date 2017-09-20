@@ -23,7 +23,8 @@
 module Circuit1_tb();
 parameter TB_WIDTH = 16;
 reg [TB_WIDTH - 1:0]A_s, B_s, C_s; 
-wire [TB_WIDTH-1:0] Z_s, X_s;
+wire [TB_WIDTH-1:0] X_s;
+wire [TB_WIDTH/2 -1:0] Z_s;
 reg clk,rst;
 Circuit1 #(.WIDTH(TB_WIDTH)) test(A_s,B_s,C_s,Z_s,X_s,clk,rst);
 always
