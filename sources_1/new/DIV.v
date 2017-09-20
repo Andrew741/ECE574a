@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DIV #(parameter WIDTH=8)(A,B,QUOT);
+module DIV #(parameter WIDTH=64)(A,B,QUOT);
     input [WIDTH-1:0]A,B;
     output reg [WIDTH-1:0]QUOT;
     

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 09/10/2017 08:08:34 AM
+// Create Date: 09/19/2017 08:24:19 PM
 // Design Name: 
-// Module Name: Mux_2x1_tb
+// Module Name: Circuit1_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,21 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Mux_2x1_tb();
-    parameter TB_WIDTH = 16;
-    reg [TB_WIDTH - 1:0]A_s, B_s;
-    reg S_s;
-    wire [TB_WIDTH -1 :0]D_s;
-
-MUX2x1 #(.WIDTH(TB_WIDTH)) test(A_s,B_s,S_s,D_s);
+module Circuit1_tb();
+parameter TB_WIDTH = 16;
+reg [TB_WIDTH - 1:0]A_s, B_s, C_s; 
+wire [TB_WIDTH-1:0] Z_s, X_s;
+reg clk,rst;
+Circuit1 #(.WIDTH(TB_WIDTH)) test(A_s,B_s,C_s,Z_s,X_s,clk,rst);
+always
+    #10 clk <= ~clk;
 
 initial
 begin
-  // Easy Case
-  #10 A_s <= 16'd0; B_s <=16'd8; S_s <=1;
-  
-  #10 A_s <= 16'hFFFF; B_s <=16'd2; S_s <=0;
-  
-  #10 A_s <= 16'd1; B_s <=16'd0; S_s <=1;
-end 
+    clk <= 0; 
+    rst <= 0;
+   // Easy Case
+   #30 A_s <= 16'd4; B_s <=16'd3; C_s <= 16'd5;
+   // Z should be 9
+   // X should be 13
+end
 endmodule

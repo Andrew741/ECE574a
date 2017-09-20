@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUL #(parameter WIDTH = 8)(A, B, PROD);
+module MUL #(parameter WIDTH = 64)(A, B, PROD);
     input [WIDTH-1:0]A,B;
     output reg [WIDTH-1:0] PROD;
     

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module SUB #(parameter WIDTH = 8)(A,B,DIFF);
+module SUB #(parameter WIDTH = 64)(A,B,DIFF);
     input [WIDTH-1:0]A,B;
     output reg [WIDTH-1:0] DIFF;
     always @(A,B) 

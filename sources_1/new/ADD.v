@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ADD #(parameter WIDTH = 8)(A, B, SUM);
+module ADD #(parameter WIDTH = 64)(A, B, SUM);
     input [WIDTH-1:0] A,B;
     output reg [WIDTH-1:0]SUM;
     

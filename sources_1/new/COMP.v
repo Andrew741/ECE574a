@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module COMP #(parameter WIDTH = 8)(A,B,GT,LT,EQ);
+module COMP #(parameter WIDTH = 64)(A,B,GT,LT,EQ);
     input [WIDTH-1:0] A,B;
     output reg GT,LT,EQ;
     

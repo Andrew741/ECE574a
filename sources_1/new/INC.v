@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module INC #(parameter WIDTH=8)(A,D);
+module INC #(parameter WIDTH=64)(A,D);
     input [WIDTH-1:0] A;
     output reg [WIDTH-1:0] D;
     

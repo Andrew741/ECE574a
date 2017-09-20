@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MOD #(parameter WIDTH=8)(A,B,REM);
+module MOD #(parameter WIDTH=64)(A,B,REM);
     input [WIDTH-1:0] A,B;
     output reg [WIDTH-1:0] REM;
 
