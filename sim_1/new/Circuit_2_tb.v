@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 09/19/2017 08:24:19 PM
+// Create Date: 09/20/2017 09:46:41 PM
 // Design Name: 
-// Module Name: Circuit1_tb
+// Module Name: Circuit_2_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Circuit1_tb();
-reg [7:0]A_s, B_s, C_s; 
-wire [15:0] X_s;
-wire [7:0] Z_s;
+module Circuit_2_tb();
+reg [31:0]A_s, B_s, C_s; 
+wire [31:0] X_s;
+wire [31:0] Z_s;
 reg clk,rst;
-Circuit1  test(A_s,B_s,C_s,Z_s,X_s,clk,rst);
+Circuit_2  test(A_s,B_s,C_s,Z_s,X_s,clk,rst);
 always
     #10 clk <= ~clk;
 
@@ -34,9 +34,9 @@ begin
     clk <= 0; 
     rst <= 0;
    // Easy Case
-   #30 A_s <= 8'd4; B_s <=8'd3; C_s <= 8'd5;
+   #20 A_s <= 8'd4; B_s <=8'd3; C_s <= 8'd5;
    // Z should be 9
    // X should be 13
-   #10 A_s <= 8'd92; B_s <=8'd128; C_s <= 8'd46;
+   #30 A_s <= 8'd92; B_s <=8'd128; C_s <= 8'd46;
 end
 endmodule
