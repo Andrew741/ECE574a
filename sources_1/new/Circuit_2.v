@@ -37,9 +37,11 @@ module Circuit_2 (a,b,c,z,x,clk,rst);
     MUX2x1 #(.WIDTH(32))mux1(d,e,dLTe,g);//g
     MUX2x1 #(.WIDTH(32))mux2(g,f,dEQe,h);//h
 
-    SHL #(.WIDTH(32))shl1(g,dLTe,xwire);
-    SHR #(.WIDTH(32))shr1(h,dEQe,zwire);
+    SHL #(.WIDTH(32))shl1(g,{31'b0,dLTe},xwire);
+    SHR #(.WIDTH(32))shr1(h,{31'b0,dEQe},zwire);
+    
     
     REG #(.WIDTH(32))reg1(xwire,clk,rst,x);
-    REG #(.WIDTH(32))reg2(zwire,clk,rst,z);   
+    REG #(.WIDTH(32))reg2(zwire,clk,rst,z);
+  
 endmodule
