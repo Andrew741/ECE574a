@@ -27,9 +27,9 @@ module Circuit_8(a,b,c,zero,clk,rst,z);
     wire gEQz,gt,lt;
     
     // e = a - 1;
-    SUB #(.WIDTH(64))sub1(a,64'd1,e);
+    DEC #(.WIDTH(64))dec1(a,e);
     // f = c + 1;
-    ADD #(.WIDTH(64))add1(c,64'd1,f);
+    INC #(.WIDTH(64))inc1(c,f);
     // g = a % c;
     MOD #(.WIDTH(64))mod1(a,c,g);
     // gEQz = g == zero;
