@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module SUB #(parameter WIDTH = 64)(A,B,DIFF);
-    input [WIDTH-1:0]A,B;
-    output reg [WIDTH-1:0] DIFF;
+module SUB #(parameter DATAWIDTH = 64)(A,B,DIFF);
+    input [DATAWIDTH-1:0]A,B;
+    output reg [DATAWIDTH-1:0] DIFF;
     always @(A,B) 
     begin
         DIFF <= A - B;

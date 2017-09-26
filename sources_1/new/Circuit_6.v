@@ -52,28 +52,28 @@ module Circuit_6(a, b, c, d, e, f, g, h, num, avg,clk,rst);
     wire [31:0] t1, t2, t3, t4, t5, t6, t7;
     input clk,rst;
     
-    ADD #(.WIDTH(32)) add1({16'b0,a},{16'b0,b},t1);
-    REG #(.WIDTH(32)) reg1({16'b0,t1},clk,rst,r1);
+    ADD #(.DATAWIDTH(32)) add1({16'b0,a},{16'b0,b},t1);
+    REG #(.DATAWIDTH(32)) reg1({16'b0,t1},clk,rst,r1);
     
-    ADD #(.WIDTH(32)) add2({16'b0,r1},{16'b0,c},t2);
-    REG #(.WIDTH(32)) reg2({16'b0,t2},clk,rst,r2);
+    ADD #(.DATAWIDTH(32)) add2({16'b0,r1},{16'b0,c},t2);
+    REG #(.DATAWIDTH(32)) reg2({16'b0,t2},clk,rst,r2);
     
-    ADD #(.WIDTH(32)) add3({16'b0,r2},{16'b0,d},t3);
-    REG #(.WIDTH(32)) reg3({16'b0,t3},clk,rst,r3);
+    ADD #(.DATAWIDTH(32)) add3({16'b0,r2},{16'b0,d},t3);
+    REG #(.DATAWIDTH(32)) reg3({16'b0,t3},clk,rst,r3);
     
-    ADD #(.WIDTH(32)) add4({16'b0,r3},{16'b0,e},t4);
-    REG #(.WIDTH(32)) reg4({16'b0,t4},clk,rst,r4);
+    ADD #(.DATAWIDTH(32)) add4({16'b0,r3},{16'b0,e},t4);
+    REG #(.DATAWIDTH(32)) reg4({16'b0,t4},clk,rst,r4);
     
-    ADD #(.WIDTH(32)) add5({16'b0,r4},{16'b0,f},t5);
-    REG #(.WIDTH(32)) reg5({16'b0,t5},clk,rst,r5);
+    ADD #(.DATAWIDTH(32)) add5({16'b0,r4},{16'b0,f},t5);
+    REG #(.DATAWIDTH(32)) reg5({16'b0,t5},clk,rst,r5);
     
-    ADD #(.WIDTH(32)) add6({16'b0,r5},{16'b0,g},t6);
-    REG #(.WIDTH(32)) reg6({16'b0,t6},clk,rst,r6);
+    ADD #(.DATAWIDTH(32)) add6({16'b0,r5},{16'b0,g},t6);
+    REG #(.DATAWIDTH(32)) reg6({16'b0,t6},clk,rst,r6);
     
-    ADD #(.WIDTH(32)) add7({16'b0,r6},{16'b0,h},t7);
-    REG #(.WIDTH(32)) reg7({16'b0,t7},clk,rst,r7);
+    ADD #(.DATAWIDTH(32)) add7({16'b0,r6},{16'b0,h},t7);
+    REG #(.DATAWIDTH(32)) reg7({16'b0,t7},clk,rst,r7);
 
-    DIV #(.WIDTH(16)) div1(r7,num,avgwire );
-    REG #(.WIDTH(16)) reg8(avgwire,clk,rst,avg);
+    DIV #(.DATAWIDTH(16)) div1(r7,num,avgwire );
+    REG #(.DATAWIDTH(16)) reg8(avgwire,clk,rst,avg);
 
 endmodule

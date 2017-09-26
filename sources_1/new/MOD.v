@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MOD #(parameter WIDTH=64)(A,B,REM);
-    input [WIDTH-1:0] A,B;
-    output reg [WIDTH-1:0] REM;
+module MOD #(parameter DATAWIDTH=64)(A,B,REM);
+    input [DATAWIDTH-1:0] A,B;
+    output reg [DATAWIDTH-1:0] REM;
 
     always @(A,B)
     begin

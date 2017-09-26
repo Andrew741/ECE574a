@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module INC #(parameter WIDTH=64)(A,D);
-    input [WIDTH-1:0] A;
-    output reg [WIDTH-1:0] D;
+module INC #(parameter DATAWIDTH=64)(A,D);
+    input [DATAWIDTH-1:0] A;
+    output reg [DATAWIDTH-1:0] D;
     
     always @(A)
     begin

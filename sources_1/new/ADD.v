@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ADD #(parameter WIDTH = 64)(A, B, SUM);
-    input [WIDTH-1:0] A,B;
-    output reg [WIDTH-1:0]SUM;
+module ADD #(parameter DATAWIDTH = 64)(A, B, SUM);
+    input [DATAWIDTH-1:0] A,B;
+    output reg [DATAWIDTH-1:0]SUM;
     
     always @(A,B) 
     begin

@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUL #(parameter WIDTH = 64)(A, B, PROD);
-    input [WIDTH-1:0]A,B;
-    output reg [WIDTH-1:0] PROD;
+module MUL #(parameter DATAWIDTH = 64)(A, B, PROD);
+    input [DATAWIDTH-1:0]A,B;
+    output reg [DATAWIDTH-1:0] PROD;
     
     always @(A,B)
     begin 

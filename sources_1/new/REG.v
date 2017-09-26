@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module REG #(parameter WIDTH = 64)(D,Clk,Rst,Q);
-    input [WIDTH-1:0] D;
+module REG #(parameter DATAWIDTH = 64)(D,Clk,Rst,Q);
+    input [DATAWIDTH-1:0] D;
     input Clk,Rst;
-    output reg [WIDTH-1:0] Q;
+    output reg [DATAWIDTH-1:0] Q;
     
     always @(posedge Clk) begin
         if (Rst == 1) begin

@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUX2x1 #(parameter WIDTH=64)(A,B,SEL,D);
-    input [WIDTH-1:0]A,B;
+module MUX2x1 #(parameter DATAWIDTH=64)(A,B,SEL,D);
+    input [DATAWIDTH-1:0]A,B;
     input SEL;
-    output reg [WIDTH-1:0]D;
+    output reg [DATAWIDTH-1:0]D;
     
     always @(A,B,SEL)
     begin

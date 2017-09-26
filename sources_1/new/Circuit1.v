@@ -29,13 +29,13 @@ module Circuit1 (a,b,c,z,x,clk,rst);
     input clk,rst;
     wire lt,eq;
     
-    ADD #(.WIDTH(8))add1(a,b,d);
-    ADD #(.WIDTH(8))add2(a,c,e);
-    COMP #(.WIDTH(16))comp1(d,e,g,lt,eq);
-    MUX2x1 #(.WIDTH(8))mux1(d,e,g,z);
+    ADD #(.DATAWIDTH(8))add1(a,b,d);
+    ADD #(.DATAWIDTH(8))add2(a,c,e);
+    COMP #(.DATAWIDTH(16))comp1(d,e,g,lt,eq);
+    MUX2x1 #(.DATAWIDTH(8))mux1(d,e,g,z);
 
-    MUL #(.WIDTH(16))mul1({8'b0,a},{8'b0,c},f);
-    SUB #(.WIDTH(16))sub1(f,{8'b0,d},xwire);
-    REG #(.WIDTH(16))reg1(xwire,clk,rst,x);
+    MUL #(.DATAWIDTH(16))mul1({8'b0,a},{8'b0,c},f);
+    SUB #(.DATAWIDTH(16))sub1(f,{8'b0,d},xwire);
+    REG #(.DATAWIDTH(16))reg1(xwire,clk,rst,x);
    
 endmodule
