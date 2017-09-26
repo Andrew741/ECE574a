@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Circuit1 (a,b,c,z,x,clk,rst);
+module Circuit_1 (a,b,c,z,x,clk,rst);
     input [7:0] a,b,c; 
     output wire [15:0]x;
     output wire [7:0]z;
