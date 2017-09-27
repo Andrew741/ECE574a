@@ -27,16 +27,16 @@ module Circuit_8(a,b,c,zero,clk,rst,z);
     wire gEQz,gt,lt;
     
     // e = a - 1;
-    DEC #(.WIDTH(64))dec1(a,e);
+    DEC #(.DATAWIDTH(64))dec1(a,e);
     // f = c + 1;
-    INC #(.WIDTH(64))inc1(c,f);
+    INC #(.DATAWIDTH(64))inc1(c,f);
     // g = a % c;
-    MOD #(.WIDTH(64))mod1(a,c,g);
+    MOD #(.DATAWIDTH(64))mod1(a,c,g);
     // gEQz = g == zero;
-    COMP#(.WIDTH(64))cmp1(g,zero,gt,lt,gEQz);
+    COMP#(.DATAWIDTH(64))cmp1(g,zero,gt,lt,gEQz);
     // zwire = gEQz ? e : f;
-    MUX2x1#(.WIDTH(64))mux1(e,f,gEQz,zwire);
+    MUX2x1#(.DATAWIDTH(64))mux1(e,f,gEQz,zwire);
     // z = zwire;
-    REG #(.WIDTH(64))reg1(zwire,clk,rst,z);
+    REG #(.DATAWIDTH(64))reg1(zwire,clk,rst,z);
 
 endmodule

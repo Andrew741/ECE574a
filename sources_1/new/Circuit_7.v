@@ -27,16 +27,16 @@ module Circuit_7(a,b,c,d,zero,clk,rst,z);
     wire gEQz,gt,lt;
     
     // e = a / b;
-    DIV #(.WIDTH(64))div1(a,b,e);
+    DIV #(.DATAWIDTH(64))div1(a,b,e);
     // f = c / d;
-    DIV #(.WIDTH(64))div2(c,d,f);
+    DIV #(.DATAWIDTH(64))div2(c,d,f);
     // g = a % b;
-    MOD #(.WIDTH(64))mod1(a,b,g);
+    MOD #(.DATAWIDTH(64))mod1(a,b,g);
     // gEQz = g == zero;
-    COMP#(.WIDTH(64))cmp1(g,zero,gt,lt,gEQz);
+    COMP#(.DATAWIDTH(64))cmp1(g,zero,gt,lt,gEQz);
     // zwire = gEQz ? e : f;
-    MUX2x1#(.WIDTH(64))mux1(e,f,gEQz,zwire);
+    MUX2x1#(.DATAWIDTH(64))mux1(e,f,gEQz,zwire);
     // z = zwire;
-    REG #(.WIDTH(64))reg1(zwire,clk,rst,z);
+    REG #(.DATAWIDTH(64))reg1(zwire,clk,rst,z);
 
 endmodule
